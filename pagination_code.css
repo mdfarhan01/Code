@@ -1,0 +1,5 @@
+.woocommerce nav.woocommerce-pagination ul, .woocommerce nav.woocommerce-pagination ul li {
+    border-radius: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
