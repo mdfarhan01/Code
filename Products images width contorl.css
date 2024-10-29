@@ -1,0 +1,20 @@
+.woocommerce-js div.product div.images img {
+    display: block;
+    width: 60%;
+    height: auto;
+    box-shadow: none;
+    display: flex;
+    margin: 0 auto;
+}
+
+@media (max-width: 400px) {
+.woocommerce-js div.product div.images img {
+    display: block;
+    width: 75%;
+    height: auto;
+    box-shadow: none;
+    display: flex;
+    margin: 0 auto;
+}
+
+}
