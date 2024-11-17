@@ -1,0 +1,38 @@
+/* Change the Background Colour on Scroll */
+.elementor-sticky--effects {
+ background: #000000 !important;
+
+}
+
+/* The scroll-logo is currently off.*/
+.scroll-logo {
+ display: none;
+}
+
+/* Shut this logo off and activate the other logo after scroll*/
+.elementor-sticky--effects .scroll-logo {
+ display: inline-block;
+}
+
+.elementor-sticky--effects .original-logo {
+ display: none;
+}
+
+
+/* Change Text Colour and Links colour */
+.elementor-sticky--effects .menutextcolours ul li a {
+    color: #485C6C !important;
+}
+
+
+.elementor-sticky--effects
+ h3.elementor-icon-box-title {
+    color: #485C6C !important;
+}
+
+.elementor-sticky--effects.elementor-28 .elementor-element.elementor-element-4f9c6f07 .elementor-nav-menu--dropdown .elementor-item, .elementor-28 .elementor-element.elementor-element-4f9c6f07 .elementor-nav-menu--dropdown  .elementor-sub-item {
+    font-weight: 400;
+    color: #fff !important;
+}
+
+
