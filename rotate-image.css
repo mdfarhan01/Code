@@ -1,0 +1,17 @@
+  .rotate-image {
+     Optional: make the image circular */
+    overflow: hidden;
+  }
+
+  .rotate-image img {
+    animation: rotate360 10s linear infinite; /* 4 seconds for 360° rotation */
+  }
+
+  @keyframes rotate360 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
