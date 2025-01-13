@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Title Example</title>
+</head>
+<body>
+    <style>
+        /* Title Styling */
+        .title-effect {
+            font-size: 13px;
+            font-weight: 200;
+            text-align: center;
+            margin: 10px 0;
+            color: #000;
+            animation: fadeEffect 2s infinite alternate;
+        }
+
+        /* Animation Effect */
+        @keyframes fadeEffect {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0.5;
+                transform: scale(1.1);
+            }
+        }
+    </style>
+
+    <div id="dynamic-title" class="title-effect">Save up to 40% on gifts & sets</div>
+
+    <script>
+        // Titles to Rotate
+        const titles = [
+            "Save up to 40% on gifts & sets",
+            "15% Off Orders Under $150 | 20% Off $150+ orders & Free Ship",
+            "Shop now and enjoy exclusive discounts!",
+            "Limited-time offers on our best-selling products!"
+        ];
+
+        // Element Reference
+        const titleElement = document.getElementById("dynamic-title");
+        let currentIndex = 0;
+
+        // Function to Update Title and Loop Through Titles
+        function updateTitle() {
+            currentIndex = (currentIndex + 1) % titles.length; // Loop index
+            titleElement.textContent = titles[currentIndex];
+        }
+
+        // Update Title Every 2 Seconds
+        setInterval(updateTitle, 2000); // Change every 2 seconds
+    </script>
+</body>
+</html>
