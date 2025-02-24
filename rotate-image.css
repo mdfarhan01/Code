@@ -15,3 +15,16 @@
       transform: rotate(360deg);
     }
   }
+
+
+Another Code for 
+
+
+@keyframes rotate45 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(40deg); }
+}
+
+.rotating-image-2 {
+  animation: rotate45 15s infinite alternate linear;
+}
