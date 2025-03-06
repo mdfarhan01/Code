@@ -1,0 +1,7 @@
+selector img{
+    cursor: pointer;
+    transition: 0.5s;
+}
+selector img:hover{
+    transform: translateY(-15px)
+}
