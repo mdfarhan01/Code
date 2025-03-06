@@ -1,0 +1,7 @@
+selector{
+    position: absolute;
+    left: 0;
+    bottom:4vh;
+    width: 200px;
+    transform: translateX(-50%);
+}
