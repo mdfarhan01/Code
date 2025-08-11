@@ -164,3 +164,226 @@ h4.tutor-accordion-item-header {
 }
 	
 }
+
+
+
+
+/*=====================================================                 updated code for all                  ===================================================================== */
+
+
+
+
+
+
+/* custom code for course single page
+ */
+
+
+/* padding  */
+
+.tutor-wrap.tutor-full-width-course-top.tutor-course-top-info.tutor-page-wrap.tutor-wrap-parent.post-1045.courses.type-courses.status-publish.has-post-thumbnail.hentry.course-category-dj-basics.ast-article-single {
+    padding: 50px 20px;
+}
+
+
+a.tutor-btn.tutor-btn-outline-primary.tutor-btn-lg.tutor-btn-block.tutor-woocommerce-view-cart {
+    background: red;
+    border: none;
+}
+a.tutor-btn.tutor-btn-outline-primary.tutor-btn-lg.tutor-btn-block.tutor-woocommerce-view-cart:hover {
+    background: red;
+    border: none;
+	color:#fff;
+}
+
+/* 	title  */
+h1.tutor-course-details-title.tutor-fs-4.tutor-fw-bold.tutor-color-black.tutor-mt-12.tutor-mb-0 {
+    color: #000;
+    font-size: 44px;
+		line-height: 54px
+}
+/* Course Progress */
+h3.tutor-color-black.tutor-fs-5.tutor-fw-bold.tutor-mb-16 {
+    color: #000;
+    font-size: 30px;
+}
+
+
+/* category text */
+
+.tutor-meta.tutor-course-details-info a {
+    color: red;
+}
+
+/* wishlist */
+
+a.tutor-btn.tutor-btn-ghost.tutor-course-wishlist-btn.tutor-mr-16 {
+    color: red;
+}
+ 
+/* share  */
+
+a.tutor-btn.tutor-btn-ghost.tutor-course-share-btn {
+    color: red;
+}
+
+/* view card  */
+a.tutor-btn.tutor-btn-outline-primary.tutor-mt-24.tutor-btn-lg.tutor-btn-block {
+    background: red;
+    border: none;
+}
+a.tutor-btn.tutor-btn-outline-primary.tutor-mt-24.tutor-btn-lg.tutor-btn-block:hover {
+    background: red;
+    border: none;
+		color: #fff;
+}
+
+/* author */
+h3.tutor-fs-6.tutor-fw-medium.tutor-color-black.tutor-mb-16 {
+    color: #000;
+    font-size: 23px;
+}
+
+/* author name */
+a.tutor-fs-6.tutor-fw-bold.tutor-color-black {
+    color: red;
+    font-size: 13px;
+}
+/* review  */
+a.tutor-nav-link {
+   color: red;
+}
+
+/* about course */
+h2.tutor-fs-5.tutor-fw-bold.tutor-color-black.tutor-mb-12 {
+    color: #000;
+    font-size: 44px;
+}
+
+/* what will you learn */
+h3.tutor-course-details-widget-title.tutor-fs-5.tutor-fw-bold.tutor-color-black.tutor-mb-16 {
+    color: #000;
+    font-size: 30px;
+}
+
+/* course content  */
+	h3.tutor-fs-5.tutor-fw-bold.tutor-color-black.tutor-mb-24.tutor-course-content-title{
+    color: #000;
+    font-size: 32px;
+	}
+
+
+h5.tutor-course-content-list-item-title a {
+    color: #000;
+}
+
+.tutor-accordion-item-header.is-active {
+    color: #000;
+    background-color: #eff1f6;
+    border-radius: 6px 6px 0 0;
+    font-size: 22px;
+}
+h5.tutor-course-content-list-item-title {
+    color: #000;
+    font-size: 18px;
+    line-height: 28px;
+}
+.tutor-accordion-item-header.is-active {
+    color: #000;
+    background-color: #eff1f6;
+    border-radius: 6px 6px 0 0;
+    font-size: 22px;
+}
+h4.tutor-accordion-item-header {
+    color: #000;
+    font-size: 22px;
+}
+
+
+
+
+@media (max-width: 580px) {
+	
+	/* padding  */
+
+.tutor-wrap.tutor-full-width-course-top.tutor-course-top-info.tutor-page-wrap.tutor-wrap-parent.post-1045.courses.type-courses.status-publish.has-post-thumbnail.hentry.course-category-dj-basics.ast-article-single {
+    padding: 30px 0px;
+}
+	
+	
+/* 	title  */
+	h1.tutor-course-details-title.tutor-fs-4.tutor-fw-bold.tutor-color-black.tutor-mt-12.tutor-mb-0 {
+    color: #000;
+    font-size: 24px;
+	  line-height: 34px;
+}
+	
+/* about course */
+h2.tutor-fs-5.tutor-fw-bold.tutor-color-black.tutor-mb-12 {
+    color: #000;
+    font-size: 24px;
+}
+	/* what will you learn */
+h3.tutor-course-details-widget-title.tutor-fs-5.tutor-fw-bold.tutor-color-black.tutor-mb-16 {
+    color: #000;
+    font-size: 24px;
+}
+	
+/* course content  */
+	h3.tutor-fs-5.tutor-fw-bold.tutor-color-black.tutor-mb-24.tutor-course-content-title{
+    color: #000;
+    font-size: 24px;
+	}
+	.tutor-accordion-item-header.is-active {
+    color: #000;
+    background-color: #eff1f6;
+    border-radius: 6px 6px 0 0;
+    font-size: 18px;
+}
+	.tutor-accordion-item-header.is-active {
+    color: #000;
+    background-color: #eff1f6;
+    border-radius: 6px 6px 0 0;
+    font-size: 18px;
+}
+	h5.tutor-course-content-list-item-title {
+    color: #000;
+    font-size: 16px;
+    line-height: 28px;
+}
+	.tutor-accordion-item-header.is-active {
+    color: #000;
+    background-color: #eff1f6;
+    border-radius: 6px 6px 0 0;
+    font-size: 18px;
+}
+h4.tutor-accordion-item-header {
+    color: #000;
+    font-size: 18px;
+}
+
+}
+
+/* cart page title  */
+a.wc-block-components-product-name {
+    color: #000;
+}
+
+
+/* single-content */
+.tutor-course-single-content-wrapper {
+    padding: 80px 0px;
+}
+a.tutor-btn.tutor-btn-secondary.tutor-btn-sm {
+    background: red;
+    color: #ffff;
+}
+@media (max-width: 580px) {
+	.tutor-course-single-content-wrapper {
+    padding: 30px 10px;
+}
+}
+
+
+
+
