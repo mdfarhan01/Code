@@ -1,0 +1,58 @@
+/* === JetTabs: force equal width & equal height, remove gaps === */
+.jet-tabs__control-wrapper {
+  display: flex !important;
+  gap: 0 !important;               
+  align-items: stretch !important;  /* elements same height */
+}
+
+/* Force each tab to take 50% */
+.jet-tabs__control {
+  flex: 0 0 50% !important;
+  max-width: 50% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;           /* inner padding handled by inner container */
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+/* Make inner area fill the tab and center content */
+.jet-tabs__control .jet-tabs__control-inner {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 18px 24px !important;   /* adjust vertical spacing if needed */
+  box-sizing: border-box !important;
+  border: none !important;         /* remove any extra borders that change size */
+  background: transparent !important;
+}
+
+/* Normalize image + text sizes so they don't change height */
+.jet-tabs__label-image {
+  display: block !important;
+  margin: 0 auto 8px !important;
+  max-width: 60px !important;      /* make icon sizes consistent */
+  height: auto !important;
+}
+
+/* text styling */
+.jet-tabs__label-text {
+  line-height: 1.2 !important;
+  margin: 0 !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+}
+
+/* ensure active/hover states don't add extra padding/margins */
+.jet-tabs__control.active-tab,
+.jet-tabs__control:hover {
+  padding: 0 !important;
+}
+
+/* remove any pseudo-element lines (sometimes themes add ::before/::after) */
+.jet-tabs__control .jet-tabs__control-inner::before,
+.jet-tabs__control .jet-tabs__control-inner::after {
+  display: none !important;
+}
