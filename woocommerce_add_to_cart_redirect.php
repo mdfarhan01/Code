@@ -36,3 +36,40 @@ function farhan_redirect_after_add_to_cart_js() {
     </script>
     <?php
 }
+
+
+
+
+
+
+// 🚀 Add to cart করার সাথে সাথেই checkout page এ রিডাইরেক্ট হবে
+add_filter('woocommerce_add_to_cart_redirect', 'farhan_direct_checkout_redirect');
+function farhan_direct_checkout_redirect() {
+    return wc_get_checkout_url();
+}
+
+// 🧹 পুরানো cart clear করে দেবে যেন শুধুমাত্র নতুন প্রোডাক্ট থাকে
+add_filter('woocommerce_add_to_cart_validation', 'farhan_clear_cart_before_add', 10, 3);
+function farhan_clear_cart_before_add($passed, $product_id, $quantity) {
+    if (WC()->cart->get_cart_contents_count() > 0) {
+        WC()->cart->empty_cart();
+    }
+    return $passed;
+}
+
+// ⚙️ AJAX add-to-cart এর ক্ষেত্রেও কাজ করানোর জন্য
+add_action('wp_footer', 'farhan_redirect_after_ajax_add_to_cart');
+function farhan_redirect_after_ajax_add_to_cart() {
+    if (is_admin()) return;
+    $checkout_url = esc_js(wc_get_checkout_url());
+    ?>
+    <script type="text/javascript">
+    jQuery(function($){
+        $(document.body).on('added_to_cart', function(){
+            window.location.href = '<?php echo $checkout_url; ?>';
+        });
+    });
+    </script>
+    <?php
+}
+
