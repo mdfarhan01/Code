@@ -1,0 +1,83 @@
+<!-- Progress Bar + Arrows Section -->
+<div class="tabs-progress-wrapper" style="display:flex; align-items:center; gap:10px; margin-top:20px;">
+  <!-- Left Arrow -->
+  <button class="tabs-arrow left" 
+          style="background:#fff; color:#D4BCA9; border-radius:50%; border:none; font-size:20px; width:10px; padding:20px; height:15px; cursor:pointer; display:flex; align-items:center; justify-content:center;">
+    &#10094;
+  </button>
+
+  <!-- Progress Bar Container -->
+  <div class="tabs-progress-bar" style="flex:1; height:4px; background:#eee; position:relative; border-radius:2px;">
+    <!-- Active Progress -->
+    <div class="tabs-progress-active" 
+         style="position:absolute; top:0; left:0; height:100%; width:0%; background:#ffcc00; transition: width 0.5s ease;">
+    </div>
+  </div>
+
+  <!-- Right Arrow -->
+  <button class="tabs-arrow right" 
+          style="background:#fff; color:#D4BCA9; border-radius:50%; border:none; font-size:20px;padding:20px; width:10px; height:15px; cursor:pointer; display:flex; align-items:center; justify-content:center;">
+    &#10095;
+  </button>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // ======= SELECT TABS =======
+  // যদি অন্য কোনো Tab Section এ ব্যবহার করো, এখানে selector update করতে হবে
+  // উদাহরণ: '.my-custom-tabs .tab-title'
+  const tabTitles = document.querySelectorAll('.e-n-tabs-heading .e-n-tab-title');
+
+  // ======= SELECT PROGRESS BAR =======
+  // যদি অন্য কোথাও ব্যবহার করতে চাও, এখানে selector update করতে হবে
+  const progressActive = document.querySelector('.tabs-progress-active');
+
+  // ======= SELECT ARROWS =======
+  // Left & Right Arrow
+  const leftArrow = document.querySelector('.tabs-arrow.left');
+  const rightArrow = document.querySelector('.tabs-arrow.right');
+
+  // ======= FIND INITIAL ACTIVE TAB =======
+  // এখানে যদি অন্য কোনো active state logic থাকে, সেটা update করতে হবে
+  let activeIndex = Array.from(tabTitles).findIndex(tab => tab.getAttribute('aria-selected') === 'true');
+
+  // ======= FUNCTION TO UPDATE TABS & PROGRESS BAR =======
+  function updateTabs(index) {
+    tabTitles.forEach((tab, i) => {
+      if(i === index){
+        tab.setAttribute('aria-selected', 'true');
+        tab.style.color = '#D4BCA9'; // active color, পরিবর্তন করতে চাইলে এখানে
+        tab.style.fontWeight = '700'; // active font weight
+      } else {
+        tab.setAttribute('aria-selected', 'false');
+        tab.style.color = ''; // default color, চাইলে update করতে হবে
+        tab.style.fontWeight = '';
+      }
+    });
+
+    // Progress bar update
+    const percent = (index) / (tabTitles.length - 1) * 100;
+    progressActive.style.width = percent + '%';
+    activeIndex = index;
+  }
+
+  // ======= TAB CLICK EVENTS =======
+  tabTitles.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      updateTabs(index);
+    });
+  });
+
+  // ======= ARROW CLICK EVENTS =======
+  leftArrow.addEventListener('click', () => {
+    if(activeIndex > 0) tabTitles[activeIndex - 1].click();
+  });
+
+  rightArrow.addEventListener('click', () => {
+    if(activeIndex < tabTitles.length - 1) tabTitles[activeIndex + 1].click();
+  });
+
+  // ======= INITIALIZE FIRST TAB =======
+  updateTabs(activeIndex);
+});
+</script>
