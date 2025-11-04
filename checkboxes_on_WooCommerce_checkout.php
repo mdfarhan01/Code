@@ -1,3 +1,5 @@
+
+<?php
 // Add custom acknowledgement and age confirmation checkboxes on WooCommerce checkout
 add_action('woocommerce_review_order_before_submit', 'labsourced_custom_checkout_checkboxes', 9);
 function labsourced_custom_checkout_checkboxes() {
