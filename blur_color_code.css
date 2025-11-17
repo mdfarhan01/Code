@@ -1,6 +1,6 @@
 /* added button class */
 
-selector .elementor-button {  added button class
+selector .elementor-button {
   /* This adds the blur */
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
