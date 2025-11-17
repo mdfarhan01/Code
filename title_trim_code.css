@@ -1,0 +1,5 @@
+[class*="title-line-"] .wd-product .wd-entities-title {
+    overflow: hidden;
+    max-height: calc(var(--title-line-count, 4) * var(--title-line-height, 1.4em));
+    line-height: var(--title-line-height, 1.4em);
+}
