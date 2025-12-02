@@ -1,0 +1,5 @@
+<style>
+.price .amount::before {
+    content: "+ ";
+}
+</style>
