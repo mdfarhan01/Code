@@ -1,0 +1,30 @@
+add_action('woocommerce_cart_calculate_fees', 'force_minimum_cart_total', 20, 1);
+ 
+function force_minimum_cart_total($cart) {
+
+    // Admin check and AJAX safe
+
+    if (is_admin() && !defined('DOING_AJAX')) return;
+ 
+    // Minimum total
+
+    $minimum_total = 30;
+ 
+    // Current cart subtotal
+
+    $current_total = $cart->get_subtotal();
+ 
+    // Only apply if subtotal is less than minimum
+
+    if ($current_total < $minimum_total) {
+
+        $fee_amount = $minimum_total - $current_total;
+ 
+        // Add fee with tax = 0
+
+        $cart->add_fee(__('Minimum Order Total Applied', 'your-text-domain'), $fee_amount, false);
+
+    }
+
+}
+ 
