@@ -1,0 +1,826 @@
+
+
+	/* =========================================================
+   TUTOR LMS SINGLE LESSON PAGE CUSTOM DESIGN
+   Goal:
+   - Course Content = same as first image layout
+   - Video Player = same clean layout as second image
+   - Only CSS (no HTML)
+   ========================================================= */
+
+/* =========================
+   CONTAINER WIDTH + PADDING
+   ========================= */
+
+
+/* =========================
+   MAIN TWO COLUMN LAYOUT
+   ========================= */
+	
+	
+	.tutor-course-single-content-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 80px 20px;
+}
+	
+.tutor-course-single-sidebar-wrapper .tutor-accordion-item-header:after {
+    color: var(--tutor-color-muted);
+    font-size: 14px;
+		display: none;
+}
+	
+	
+	
+	@media only screen and (max-width:800px) {
+
+	.tutor-course-single-content-wrapper {
+    gap: 40px;
+    padding: 60px 20px;
+}
+}
+
+
+@media (max-width: 580px) {
+	.tutor-course-single-content-wrapper {
+    gap: 40px;
+    padding: 40px 10px;
+}
+}
+	
+
+
+.tutor-course-single-sidebar-wrapper {
+    width: 32%;
+    max-width: 420px;
+    min-width: 320px;
+    flex: 0 0 32%;
+}
+
+#tutor-single-entry-content {
+    width: 68%;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+@media (max-width: 1024px) {
+    .tutor-course-single-content-wrapper {
+        gap: 24px;
+    }
+
+    .tutor-course-single-sidebar-wrapper {
+        width: 36%;
+        max-width: 360px;
+        min-width: 280px;
+        flex: 0 0 36%;
+    }
+
+    #tutor-single-entry-content {
+        width: 64%;
+    }
+}
+
+@media (max-width: 991px) {
+    .tutor-course-single-content-wrapper {
+        flex-direction: column;
+    }
+
+    .tutor-course-single-sidebar-wrapper,
+    #tutor-single-entry-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        flex: 0 0 100%;
+    }
+}
+
+/* =========================
+   COURSE CONTENT TITLE
+   ========================= */
+.tutor-course-single-sidebar-title {
+    display: none !important;
+}
+
+/* Custom heading style like image */
+.tutor-lesson-sidebar::before {
+    content: "Course Curriculum";
+    display: block;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #006d67;
+    margin-bottom: 26px;
+    letter-spacing: -0.3px;
+}
+
+@media (max-width: 767px) {
+    .tutor-lesson-sidebar::before {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+}
+
+/* =========================
+   SIDEBAR WRAPPER CLEAN
+   ========================= */
+.tutor-course-single-sidebar-wrapper {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* =========================
+   COURSE TOPIC CARD (ACCORDION)
+   ========================= */
+.tutor-course-topic {
+    background: #ffffff;
+    border: 1px solid #d9e0e5;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    box-shadow: none !important;
+}
+
+/* Active topic like first image */
+.tutor-course-topic .tutor-accordion-item-header.is-active {
+    background: #eef1f4 !important;
+    border-bottom: 1px solid #d9e0e5;
+}
+
+/* Inactive topic closed row */
+.tutor-course-topic .tutor-accordion-item-header {
+    background: #ffffff;
+    padding: 18px 20px;
+    cursor: pointer;
+    border: 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.tutor-course-topic .tutor-accordion-item-header:hover {
+    background: #f8fafb;
+}
+
+/* header inner row */
+.tutor-course-topic .tutor-row {
+    align-items: center;
+    margin: 0 !important;
+}
+
+.tutor-course-topic .tutor-col,
+.tutor-course-topic .tutor-col-auto {
+    padding: 0 !important;
+}
+
+/* =========================
+   TOPIC TITLE STYLE
+   ========================= */
+.tutor-course-topic-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 19px;
+    line-height: 1.35;
+    font-weight: 700;
+    color: #006d67;
+    margin: 0;
+}
+
+.tutor-course-topic .tutor-accordion-item-header:not(.is-active) .tutor-course-topic-title {
+    color: #101828;
+}
+
+@media (max-width: 767px) {
+    .tutor-course-topic-title {
+        font-size: 17px;
+    }
+}
+
+/* =========================
+   INFO ICON (tooltip icon)
+   ========================= */
+.tutor-course-topic-title-info {
+    margin-left: 0 !important;
+}
+
+.tutor-course-topic-title-info-icon,
+.tutor-course-topic-title-info i {
+    font-size: 16px !important;
+    color: #7b8794 !important;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tooltip */
+.tooltip-wrap {
+    position: relative;
+}
+
+.tooltip-wrap .tooltip-txt {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 12px);
+    transform: translateX(-50%);
+    background: #111827;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 8px 12px;
+    border-radius: 6px;
+    min-width: 180px;
+    max-width: 240px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    z-index: 99;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.tooltip-wrap:hover .tooltip-txt {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================
+   TOPIC SUMMARY (0/5, 1/5)
+   hide text and use arrow
+   ========================= */
+.tutor-course-topic-summary {
+    font-size: 0 !important;
+    width: 28px;
+    height: 28px;
+    position: relative;
+    padding-left: 0 !important;
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+/* Arrow icon */
+.tutor-course-topic-summary::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-top: 2.5px solid #111827;
+    border-right: 2.5px solid #111827;
+    transform: translate(-60%, -50%) rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+/* Active = arrow up like first image */
+.tutor-course-topic .tutor-accordion-item-header.is-active .tutor-course-topic-summary::before {
+    transform: translate(-50%, -35%) rotate(-45deg);
+    border-color: #006d67;
+}
+
+/* =========================
+   ACCORDION BODY
+   ========================= */
+.tutor-course-topic .tutor-accordion-item-body {
+    background: #ffffff;
+    padding: 0;
+    border-top: 0;
+}
+
+/* closed hidden area */
+.tutor-course-topic .tutor-accordion-item-body.tutor-display-none {
+    display: none !important;
+}
+
+/* =========================
+   LESSON / QUIZ ITEM ROW
+   ========================= */
+.tutor-course-topic-item {
+    border: 0 !important;
+    background: transparent !important;
+    margin: 0 !important;
+}
+
+.tutor-course-topic-item a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    text-decoration: none !important;
+    padding: 16px 20px;
+    border-top: 1px solid #edf2f6;
+    background: #ffffff;
+    transition: all 0.25s ease;
+    min-height: 58px;
+}
+
+.tutor-course-topic-item:first-child a {
+    border-top: 0;
+}
+
+.tutor-course-topic-item a:hover {
+    background: #f9fbfc;
+}
+
+/* Active lesson row */
+.tutor-course-topic-item.is-active a {
+    background: #ffffff;
+}
+
+/* left flex */
+.tutor-course-topic-item a > .tutor-d-flex.tutor-mr-32 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: 0 !important;
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+/* right flex */
+.tutor-course-topic-item a > .tutor-d-flex.tutor-ml-auto {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-left: auto !important;
+    flex-shrink: 0;
+}
+
+/* =========================
+   LESSON / QUIZ ICONS
+   ========================= */
+.tutor-course-topic-item-icon {
+    margin: 0 !important;
+    margin-top: 0 !important;
+    flex-shrink: 0;
+    position: relative;
+    width: 18px;
+    min-width: 18px;
+    text-align: center;
+    color: #006d67 !important;
+    font-size: 16px !important;
+}
+
+/* YouTube lesson icon => play badge feel */
+.tutor-course-topic-item-lesson .tutor-course-topic-item-icon {
+    color: #006d67 !important;
+}
+
+/* Quiz icon */
+.tutor-course-topic-item-quiz .tutor-course-topic-item-icon {
+    color: #006d67 !important;
+}
+
+/* =========================
+   LESSON TITLE
+   ========================= */
+.tutor-course-topic-item-title {
+    font-size: 17px !important;
+    line-height: 1.45;
+    font-weight: 500 !important;
+    color: #111827 !important;
+    margin: 0;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+}
+
+@media (max-width: 767px) {
+    .tutor-course-topic-item-title {
+        font-size: 15px !important;
+    }
+}
+
+/* =========================
+   DURATION
+   ========================= */
+.tutor-course-topic-item-duration {
+    font-size: 16px !important;
+    line-height: 1;
+    font-weight: 500 !important;
+    color: #111827 !important;
+    margin-right: 0 !important;
+    min-width: 56px;
+    text-align: right;
+}
+
+.tutor-course-topic-item-quiz .tutor-course-topic-item-duration {
+    font-size: 0 !important;
+    min-width: 24px;
+    position: relative;
+}
+
+/* Quiz duration hide if you want same image feel */
+.tutor-course-topic-item-quiz .tutor-course-topic-item-duration::before {
+    content: "";
+}
+
+/* =========================
+   CHECKBOX => LOCK STYLE
+   ========================= */
+.tutor-course-topic-item input.tutor-form-check-input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    position: relative;
+    margin: 0 !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    cursor: default;
+}
+
+/* draw lock icon */
+.tutor-course-topic-item input.tutor-form-check-input::before {
+    content: "🔒";
+    font-size: 14px;
+    line-height: 18px;
+    display: block;
+    color: #111827;
+    text-align: center;
+}
+
+/* =========================
+   RIGHT CONTENT AREA
+   ========================= */
+#tutor-single-entry-content {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* =========================
+   TOP BAR ABOVE VIDEO
+   ========================= */
+.tutor-course-topic-single-header {
+    display: none !important;
+}
+
+/* =========================
+   VIDEO AREA WRAPPER
+   ========================= */
+.tutor-course-topic-single-body {
+    background: #ffffff;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    overflow: visible;
+	padding:0 10px;
+}
+
+/* =========================
+   VIDEO PLAYER SECTION
+   ========================= */
+.tutor-video-player-wrapper {
+    background: #ffffff;
+    padding: 24px 24px 0;
+    border-radius: 0;
+}
+
+.tutor-video-player {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* 16:9 responsive video frame */
+.tutor-video-player .plyr,
+.tutor-video-player .plyr__video-wrapper {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    background: #0f172a !important;
+}
+
+/* make video like screenshot */
+.tutor-video-player .plyr--video {
+    box-shadow: none !important;
+    border: 1px solid #dbe3ea;
+}
+
+/* keep poster/video fit */
+.tutor-video-player video,
+.tutor-video-player .plyr__video-wrapper video,
+.tutor-video-player .plyr__poster {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+}
+
+/* =========================
+   PLYR CONTROL BAR DESIGN
+   ========================= */
+.tutor-video-player .plyr__controls {
+    padding: 12px 14px !important;
+    background: linear-gradient(to top, rgba(0,0,0,0.68), rgba(0,0,0,0.18)) !important;
+    border: 0 !important;
+}
+
+.tutor-video-player .plyr__control {
+    color: #ffffff !important;
+}
+
+.tutor-video-player .plyr__progress input[type=range],
+.tutor-video-player .plyr__volume input[type=range] {
+    color: #14b8ff !important;
+}
+
+/* play overlay button */
+.tutor-video-player .plyr__control--overlaid {
+    background: rgba(14, 165, 233, 0.92) !important;
+    border: 0 !important;
+    box-shadow: 0 10px 24px rgba(14,165,233,0.25) !important;
+}
+
+.tutor-video-player .plyr__control--overlaid:hover {
+    background: rgba(2, 132, 199, 0.95) !important;
+}
+
+/* =========================
+   OVERVIEW / TABS SECTION
+   ========================= */
+.tutor-course-spotlight-wrapper {
+    margin-top: 26px;
+    background: #ffffff;
+    border-top: 0;
+}
+
+/* tabs nav */
+.tutor-course-spotlight-nav {
+    justify-content: flex-start !important;
+    gap: 10px;
+    border-bottom: 1px solid #e5ebf0;
+    margin: 0;
+    padding: 0 24px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+}
+
+.tutor-course-spotlight-nav .tutor-nav-item {
+    margin: 0 !important;
+    list-style: none;
+}
+
+.tutor-course-spotlight-nav .tutor-nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 10px !important;
+    font-size: 15px;
+    font-weight: 600;
+    color: #6b7280 !important;
+    text-decoration: none !important;
+    border: 0 !important;
+    border-bottom: 2px solid transparent !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    white-space: nowrap;
+}
+
+.tutor-course-spotlight-nav .tutor-nav-link.is-active {
+    color: #006d67 !important;
+    border-bottom-color: #006d67 !important;
+}
+
+.tutor-course-spotlight-nav .tutor-nav-link:hover {
+    color: #006d67 !important;
+}
+
+/* tab content */
+.tutor-course-spotlight-tab {
+    padding: 24px;
+}
+
+.tutor-course-spotlight-tab .tutor-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+}
+
+.tutor-course-spotlight-tab .tutor-row {
+    margin: 0 !important;
+}
+
+.tutor-course-spotlight-tab .tutor-col-xl-8 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding: 0 !important;
+}
+
+/* Overview text */
+.tutor-lesson-wrapper,
+.tutor-course-spotlight-tab .tutor-fs-6 {
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+    color: #374151 !important;
+}
+
+/* =========================
+   EXERCISE FILES CARD
+   ========================= */
+.tutor-course-attachment {
+    border: 1px solid #e5ebf0 !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+}
+
+.tutor-course-attachment .tutor-card-body {
+    padding: 18px !important;
+}
+
+.tutor-course-attachment .tutor-iconic-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #f3f6f8 !important;
+    color: #006d67 !important;
+}
+
+/* =========================
+   COMMENTS SECTION
+   ========================= */
+.tutor-comment-box {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    border: 1px solid #e5ebf0;
+    border-radius: 12px;
+    padding: 16px;
+    background: #ffffff;
+}
+
+.tutor-comment-textarea textarea {
+    min-height: 110px;
+    border: 1px solid #dbe3ea !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+}
+
+.tutor-comment-submit-btn .tutor-btn,
+.tutor-lesson-comment {
+    border-radius: 8px !important;
+    background: #006d67 !important;
+    border-color: #006d67 !important;
+    color: #fff !important;
+}
+
+/* =========================
+   FOOTER PREV / NEXT
+   ========================= */
+.tutor-course-topic-single-footer {
+    margin-top: 24px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.tutor-course-topic-single-footer .tutor-btn {
+    min-height: 48px;
+    padding: 12px 20px !important;
+    border-radius: 10px !important;
+    border: 1px solid #dbe3ea !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+}
+
+.tutor-course-topic-single-footer .tutor-btn:hover {
+    border-color: #006d67 !important;
+    color: #006d67 !important;
+}
+
+/* =========================
+   MARK COMPLETE (MOBILE)
+   ========================= */
+.tutor-spotlight-mobile-progress-complete {
+    border: 1px solid #e5ebf0;
+    border-radius: 12px;
+    background: #ffffff;
+        margin: 0 0 40px 0 !important;
+}
+
+.tutor-topbar-mark-btn {
+    border-radius: 8px !important;
+    background: #006d67 !important;
+    border-color: #006d67 !important;
+    color: #ffffff !important;
+}
+
+/* =========================
+   REMOVE EXTRA SHADOWS / BORDERS
+   ========================= */
+.tutor-card,
+.tutor-quiz-single-entry-wrap,
+.tutor-tab-item,
+.tutor-course-spotlight-wrapper,
+.tutor-course-topic-single-body,
+.tutor-course-topic-single-header,
+.tutor-course-topic-single-footer {
+    box-shadow: none !important;
+}
+
+/* =========================
+   MOBILE IMPROVEMENTS
+   ========================= */
+@media (max-width: 991px) {
+    .tutor-video-player-wrapper {
+        padding: 18px 0 0;
+    }
+
+    .tutor-course-spotlight-nav {
+        padding: 0 0;
+    }
+
+    .tutor-course-spotlight-tab {
+        padding: 20px 0 0;
+    }
+
+    .tutor-course-topic-item a {
+        padding: 14px 16px;
+    }
+
+    .tutor-course-topic .tutor-accordion-item-header {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .tutor-course-topic-title {
+        gap: 8px;
+    }
+
+    .tutor-course-topic-item a {
+        gap: 10px;
+    }
+
+    .tutor-course-topic-item-title {
+        line-height: 1.4;
+    }
+
+    .tutor-course-topic-item-duration {
+        font-size: 14px !important;
+        min-width: 46px;
+    }
+
+    .tutor-video-player .plyr__controls {
+        padding: 10px 10px !important;
+    }
+}
+
+/* =========================
+   OPTIONAL: HIDE TOP BAR ICONS
+   যদি desktop এ sidebar toggle / close না লাগে
+   ========================= */
+.tutor-course-topics-sidebar-toggler,
+[tutor-course-topics-sidebar-offcanvas-toggler],
+[tutor-hide-course-single-sidebar] {
+    box-shadow: none !important;
+}
+
+/* =========================
+   FIX FOR ASTRA / TUTOR DEFAULT WIDTHS
+   ========================= */
+.tutor-course-single-sidebar-wrapper,
+#tutor-single-entry-content,
+.tutor-quiz-single-entry-wrap {
+    box-sizing: border-box;
+}
+
+/* =========================
+   VIDEO EMBED FALLBACK
+   If YouTube source URL is not rendering nicely in Plyr,
+   this keeps frame clean.
+   ========================= */
+.tutor-video-player iframe,
+.tutor-video-player video {
+    border-radius: 10px !important;
+    display: block;
+    width: 100%;
+}
+
+/* =========================
+   CLEAN DEFAULT LINKS
+   ========================= */
+.tutor-course-topic a,
+.tutor-course-topic-single-footer a,
+.tutor-course-spotlight-wrapper a {
+    text-decoration: none !important;
+}
+
+/* =========================
+   END
+   ========================= */
+
+</style>
