@@ -1,8 +1,13 @@
+
+<?php
+
+
+
 add_filter('template_include', function ($template) {
 
     if (is_singular('courses')) {
 
-        // Force WordPress to use theme's single template so Elementor Theme Builder can hook in
+        // Force WordPress to use the theme's single template so Elementor Theme Builder can hook in
 
         $forced = locate_template(['single-courses.php', 'single.php', 'index.php']);
 
