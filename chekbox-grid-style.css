@@ -1,0 +1,104 @@
+/* ============================= */
+/* ONLY THIS FIELD (field_5d89900) */
+/* ============================= */
+
+
+/* Label (top title) */
+.elementor-field-group-field_5d89900 .elementor-field-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: #222;
+  margin-bottom: 16px;
+}
+
+/* GRID */
+.elementor-field-group-field_5d89900 .elementor-field-subgroup {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 8px 12px;
+  width: 100%;
+}
+
+/* Option wrapper */
+.elementor-field-group-field_5d89900 .elementor-field-option {
+  display: flex !important;
+  width: 100%;
+}
+
+/* Checkbox */
+.elementor-field-group-field_5d89900 .elementor-field-option input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: #3a6bdc;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ============================= */
+/* 🔥 VALUE TEXT FIX (IMPORTANT) */
+/* ============================= */
+body .elementor-field-group-field_5d89900 
+.elementor-field-option 
+label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px !important; /* FORCE */
+  color: #333;
+  line-height: 1.3;
+  width: 100%;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+/* Hover */
+.elementor-field-group-field_5d89900 .elementor-field-option label:hover {
+  background: #f0f4ff;
+  border-color: #aac4ff;
+}
+
+/* Checked state */
+.elementor-field-group-field_5d89900 
+.elementor-field-option 
+input[type="checkbox"]:checked + label {
+  background: #eef2ff;
+  border-color: #3a6bdc;
+  color: #1a3fa0;
+  font-weight: 500;
+}
+
+/* Extra spacing fix */
+.elementor-field-group-field_5d89900 
+.elementor-field-subgroup 
+input[type="checkbox"] {
+  margin: 14px 8px 0px 0;
+}
+
+/* ============================= */
+/* 📱 RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 1024px) {
+  .elementor-field-group-field_5d89900 .elementor-field-subgroup {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .elementor-field-group-field_5d89900 .elementor-field-subgroup {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .elementor-field-group-field_5d89900 .elementor-field-subgroup {
+    grid-template-columns: 1fr !important;
+  }
+}
