@@ -1,0 +1,11 @@
+add_filter( 'woocommerce_product_add_to_cart_text', 'custom_add_to_cart_text' );
+
+function custom_add_to_cart_text() {
+    return 'Voeg toe aan winkelwagen'; // ekhane ja likhben seta button e show hobe
+}
+
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'custom_single_add_to_cart_text' );
+
+function custom_single_add_to_cart_text() {
+    return 'Voeg toe aan winkelwagen'; // ekhane ja likhben seta button e show hobe
+}
