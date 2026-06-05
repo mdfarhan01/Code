@@ -1,21 +1,15 @@
-// Step 1 — Add CSS + JS CDN inside header.php
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
+	<script src="https://unpkg.com/kursor"></script>
+</head>
 
-// Before </head> add:
+<body>
+		<script>
+		new kursor({
+				type: 1,
+				color: '#ffbc05',
+				removeDefaultCursor: false,
+		})
+		</script>
+</body>
 
-<link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
-<script src="https://unpkg.com/kursor"></script>
-
-// Step 2 — Add script inside footer.php
-
-Before </body> add:
-
-<script>
-new kursor({
-    type: 1,
-    color: '#64BE44',
-    removeDefaultCursor: false,
-})
-</script>
-
-
-// Save → refresh website → cursor works.
