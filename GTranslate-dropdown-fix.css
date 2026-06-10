@@ -48,7 +48,6 @@ header,
 
 #gt_float_wrapper{
     position:relative !important;
-
 }
 
 #gt_float_wrapper .gt_options{
@@ -84,4 +83,22 @@ header,
     white-space:nowrap !important;
 }
 
+/* Mobile Fix */
+@media (max-width: 767px){
 
+    #gt_float_wrapper .gt_options{
+        width:auto !important;
+        min-width:180px !important;
+        max-width:calc(100vw - 20px) !important;
+        right:0 !important;
+        left:auto !important;
+        box-sizing:border-box !important;
+        overflow-y:auto !important;
+    }
+
+    #gt_float_wrapper .gt_options a{
+        font-size:11px !important;
+        white-space:nowrap !important;
+    }
+
+}
