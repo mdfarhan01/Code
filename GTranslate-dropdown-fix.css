@@ -1,4 +1,6 @@
 
+=====================   Nice dropdown with flags    =========================== 
+
 
 /* GTranslate dropdown fix */
 .gtranslate_wrapper {
@@ -38,3 +40,48 @@ header,
 .e-con-inner {
   overflow: visible !important;
 }
+
+
+=====================   Float    =========================== 
+
+/* Prevent header from growing */
+
+#gt_float_wrapper{
+    position:relative !important;
+
+}
+
+#gt_float_wrapper .gt_options{
+    position:absolute !important;
+    top:100% !important;
+    right:0 !important;
+    left:auto !important;
+    z-index:999999 !important;
+}
+
+/* Elementor Header Fix */
+.elementor-location-header,
+.elementor-top-section,
+.e-con,
+.e-con-inner,
+.elementor-container{
+    overflow:visible !important;
+}
+
+/* Dropdown Background */
+#gt_float_wrapper .gt_options {
+    background: #fff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,.12) !important;
+    width: 155% !important;
+}
+
+/* Smaller text */
+#gt_float_wrapper .gt_options a{
+    font-size:12px !important;
+    line-height:1.3 !important;
+    padding:6px 10px !important;
+    white-space:nowrap !important;
+}
+
+
